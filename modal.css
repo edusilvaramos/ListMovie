@@ -1,0 +1,101 @@
+
+
+#modalOverlay {
+  display: flex; /* Usando flexbox para centralizar o modal */
+  position: fixed; /* Modal fixo na tela */
+  top: 0; /* Alinhado ao topo */
+  left: 0; /* Alinhado à esquerda */
+  width: 100vw; /* Ocupa toda a largura da tela */
+  height: 100vh; /* Ocupa toda a altura da tela */
+  justify-content: center; /* Centraliza o modal horizontalmente */
+  align-items: center; /* Centraliza o modal verticalmente */
+}
+
+.overLay {
+  visibility: hidden; /* Inicialmente invisível */
+  transition: all 0.3s ease; /* Transição suave para visibilidade e opacidade */
+  opacity: 0; /* Inicialmente transparente */
+}
+
+.open {
+  visibility: visible; /* Torna visível quando a classe "open" é adicionada */
+  opacity: 1; /* Totalmente opaco */
+}
+
+#modalBackground {
+  background-color: var(--lightPrimary); /* Cor de fundo do modal */
+  width: 100%; /* Ocupa toda a largura do overlay */
+  height: 100%; /* Ocupa toda a altura do overlay */
+  position: absolute; /* Posicionado atrás do modal */
+  z-index: 0; /* Colocado abaixo do modal */
+  opacity: 0.4; /* Opacidade para dar efeito de desfoque */
+}
+
+#modalContainer {
+  z-index: 1; /* Acima do fundo do modal */
+  background-color: var(--lightPrimary); /* Cor de fundo do container do modal */
+  padding: 1rem 2rem; /* Espaçamento interno do modal */
+  border-radius: 2rem; /* Bordas arredondadas */
+  max-width: 90%; /* Largura máxima responsiva */
+  max-height: 90%; /* Altura máxima para evitar overflow */
+  overflow-y: auto; /* Rolagem vertical se o conteúdo exceder */
+}
+
+#moviePoster {
+  border-radius: 1rem; /* Bordas arredondadas para o pôster do filme */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+  width: 12rem; /* Largura fixa para o pôster */
+  height: auto; /* Mantém a proporção da imagem */
+}
+
+#movieTitle {
+  padding: 1rem 0; /* Espaçamento ao redor do título */
+}
+
+#modalBody {
+  display: flex; /* Usando flexbox para organizar o corpo do modal */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  flex-wrap: wrap; /* Permite que o conteúdo quebre em várias linhas */
+}
+
+#movieInfo {
+  display: flex; /* Flexbox para o layout das informações do filme */
+  flex-direction: column; /* Organiza os itens em uma coluna */
+  justify-content: space-around; /* Distribui o espaço ao redor dos itens */
+  width: 50%; /* Ocupa metade da largura do modal */
+  max-width: 19rem; /* Largura máxima para manter o layout compacto */
+}
+
+#movieSearch {
+  display: flex; /* Flexbox para o layout de busca do filme */
+  flex-direction: column; /* Organiza os itens em uma coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  justify-content: flex-start; /* Alinha os itens ao topo */
+  width: 50%; /* Ocupa metade da largura do modal */
+}
+
+#moviePlot {
+  text-align: left; /* Alinha o texto à esquerda */
+  margin: 8px; /* Espaçamento ao redor do texto */
+}
+
+#addToList {
+  background: linear-gradient(45deg, var(--lightestColor), var(--lightPrimary)); /* Gradiente de cor de fundo */
+  color: var(--secondaryColor); /* Cor do texto */
+  border-radius: 20px; /* Bordas arredondadas para o botão */
+  border: none; /* Remove a borda padrão do botão */
+  padding: 5px 60px; /* Espaçamento interno do botão */
+  font-size: 10px; /* Tamanho da fonte, pode ser pequeno demais */
+  margin: 5px; /* Espaçamento ao redor do botão */
+  cursor: pointer; /* Cursor de ponteiro para indicar que é clicável */
+  transition: all 0.3s ease; /* Transição suave para efeitos de hover/focus */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidade */
+}
+
+#addToList:focus,
+#addToList:hover {
+  transform: translateY(-5px); /* Eleva o botão ao passar o mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+  background: linear-gradient(45deg, var(--lightPrimary), var(--lightestColor)); /* Gradiente invertido para o hover */
+  animation: pulse 1.5s infinite; /* Animação de pulso para um efeito dinâmico */
+}

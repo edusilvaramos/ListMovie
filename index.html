@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liste de films à regarder</title>
+    <!-- Estilos para o Notie, um plugin de notificações -->
+    <link rel="stylesheet" href="./notieMaster/dist/notie.min.css" />
+    <!-- Estilos específicos para o modal -->
+    <link rel="stylesheet" href="./modal.css" />
+    <!-- Estilos adicionais para informações do modal -->
+    <link rel="stylesheet" href="./modalinfo.css" />
+    <!-- Estilos gerais do projeto -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Ícones do Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- Cabeçalho com o título e a seção de busca -->
+      <h2><i class="bi bi-camera-reels-fill"></i>Films à regarder</h2>
+      <section id="searchContainer">
+        <!-- Campo de entrada para o nome do filme -->
+        <div class="inputWrapper_MovieName">
+          <label for="movieName">Nom du Film : </label>
+          <input type="text" id="movieName" />
+        </div>
+        <!-- Campo de entrada para o ano de lançamento do filme -->
+        <div class="inputWrapper_MovieYear">
+          <label for="movieYear"> Année de Sortie: </label>
+          <input type="text" id="movieYear" />
+        </div>
+        <!-- Botão de pesquisa -->
+        <button id="searchButton"><i class="bi bi-search"></i></button>
+      </section>
+    </header>
+    <main>
+      <!-- Mensagem inicial para o usuário -->
+      <h4>Commencez maintenant votre liste de films !</h4>
+      <!-- Seção onde os filmes serão listados -->
+      <section id="movieList"></section>
+    </main>
+    <!-- Modal para informações adicionais -->
+    <article id="modalOverlayInfo" class="overLayInfo">
+      <section id="modalBackgroundInfo"></section>
+      <section id="modalContainerInfo"></section>
+    </article>
+
+    <!-- Modal para exibir e interagir com o filme -->
+    <article id="modalOverlay" class="overLay">
+      <section id="modalBackground"></section>
+      <section id="modalContainer"></section>
+    </article>
+    <!-- Scripts do projeto -->
+    <script src="./script.js"></script>
+    <!-- Script para o Notie, plugin de notificações -->
+    <script src="./notieMaster/dist/notie.min.js"></script>
+    <!-- Scripts para funcionalidade dos modais -->
+    <script src="./modal.js"></script>
+    <script src="./modalInfo.js"></script>
+    <!-- Script para gerenciamento de teclas -->
+    <script src="./key.js"></script>
+  </body>
+</html>

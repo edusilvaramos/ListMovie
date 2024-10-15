@@ -1,0 +1,85 @@
+
+
+#modalOverlayInfo {
+  display: flex; /* Centraliza o modal na tela */
+  position: fixed; /* O modal permanece fixo na janela, mesmo com scroll */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Ocupa toda a largura da viewport */
+  height: 100vh; /* Ocupa toda a altura da viewport */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente para efeito de overlay */
+}
+
+.overLayInfo {
+  visibility: hidden; /* Modal inicialmente invisível */
+  transition: all 0.3s ease; /* Transição suave para abertura do modal */
+  opacity: 0; /* Inicia transparente */
+}
+
+.openInfo {
+  visibility: visible; /* Torna o modal visível quando ativado */
+  opacity: 1; /* Mostra o modal com opacidade total */
+}
+
+#modalBackgroundInfo {
+  background-color: var(--lightPrimary); /* Cor do fundo do modal */
+  width: 100%; /* Ocupa toda a largura */
+  height: 100%; /* Ocupa toda a altura */
+  position: absolute; /* Fica atrás do container do modal */
+  z-index: 0; /* Colocado atrás do conteúdo do modal */
+}
+
+#modalContainerInfo {
+  z-index: 1; /* Coloca o container do modal acima do background */
+  background-color: var(--primaryColor); /* Cor de fundo principal do container */
+  padding: 2rem; /* Espaçamento interno */
+  border-radius: 2rem; /* Bordas arredondadas para um estilo moderno */
+  max-width: 40rem; /* Largura máxima do modal */
+  width: 90%; /* Largura responsiva, se ajusta conforme a tela */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Espaçamento entre os elementos internos */
+}
+
+#movieTitleInfo {
+  text-align: center; /* Centraliza o texto do título do filme */
+  font-size: 1.5rem; /* Tamanho da fonte do título */
+  color: var(--secondaryColor); /* Cor do texto do título */
+}
+
+#modalBodyInfo {
+  justify-content: space-between; /* Espaça os elementos dentro do body */
+  gap: 1rem; /* Espaçamento entre os elementos */
+  display: contents; /* Mantém o layout dos filhos, útil para estrutura de layout */
+}
+
+#moviePlotInfo, #movieCastInfo, #movieGenreInfo {
+  background-color: var(--lightestColor); /* Cor de fundo para esses campos */
+  padding: 1rem; /* Espaçamento interno */
+  border-radius: 1rem; /* Bordas arredondadas */
+  color: var(--primaryColor); /* Cor do texto */
+}
+
+#moviePlotInfo {
+  flex: 1; /* Permite que esse elemento ocupe espaço proporcional */
+}
+
+#movieCastInfo, #movieGenreInfo {
+  flex: 1; /* Mesma ideia, mantém os elementos proporcionais */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espaça os conteúdos internos */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768rem) { /* Ajuste de layout para telas menores */
+  #modalBodyInfo {
+    flex-direction: column; /* Coloca os elementos em coluna */
+  }
+
+  #moviePlotInfo, #movieCastInfo, #movieGenreInfo {
+    width: 100%; /* Garante que os campos ocupem toda a largura */
+  }
+}

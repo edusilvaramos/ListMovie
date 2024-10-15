@@ -1,0 +1,149 @@
+:root {
+  --primaryColor: #FEFAE0; /* Cor primária do fundo */
+  --lightPrimary: #FAEDCD; /* Cor primária clara */
+  --lightestColor: #D4A373; /* Cor mais clara para o fundo do cabeçalho */
+  --secondaryColor: #1b263b; /* Cor secundária para elementos contrastantes */
+  --lightSecondary: #0d1b2a; /* Cor secundária clara para o texto do cabeçalho */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh; /* Utiliza a altura do viewport para garantir que o corpo ocupe toda a tela */
+}
+
+* {
+  box-sizing: border-box; /* Inclui padding e border nas dimensões dos elementos */
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove padding padrão */
+  font-family: sans-serif; /* Define a fonte padrão */
+}
+
+header {
+  justify-content: space-between; /* Espaça os itens dentro do cabeçalho */
+  display: flex;
+  align-items: center; /* Alinha os itens verticalmente no centro */
+  padding: 1.5rem 1rem; /* Espaçamento interno do cabeçalho */
+  background-color: var(--lightestColor); /* Cor de fundo do cabeçalho */
+  color: var(--lightSecondary); /* Cor do texto do cabeçalho */
+}
+
+header > h2 > i {
+  margin-right: 0.5rem; /* Espaçamento à direita do ícone dentro do título */
+}
+
+#searchContainer {
+  display: flex;
+  align-items: center; /* Alinha os itens verticalmente no centro */
+  width: 50%; /* Define a largura do container de busca */
+  justify-content: flex-end; /* Alinha os itens à direita */
+}
+
+.inputWrapper_MovieName,
+.inputWrapper_MovieYear {
+  width: 65%; /* Largura dos wrappers de entrada */
+}
+
+.inputWrapper_MovieYear {
+  margin-right: 0.5rem; /* Espaçamento à direita do wrapper de ano */
+}
+
+.inputWrapper_MovieYear > input {
+  max-width: 5rem; /* Define a largura máxima do input de ano */
+}
+
+.inputWrapper_MovieName input,
+.inputWrapper_MovieYear input {
+  border-radius: 3px; /* Bordas arredondadas dos inputs */
+  border: 1px solid var(--secondaryColor); /* Borda do input */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra interna do input */
+  padding: 0.2rem; /* Espaçamento interno do input */
+}
+
+#searchButton {
+  background: linear-gradient(45deg, var(--lightestColor), var(--lightPrimary)); /* Gradiente de fundo do botão */
+  color: var(--secondaryColor); /* Cor do texto do botão */
+  border-radius: 50px; /* Bordas bem arredondadas */
+  border: none; /* Remove a borda padrão */
+  padding: 12px 24px; /* Espaçamento interno do botão */
+  font-size: 16px; /* Tamanho da fonte do botão */
+  font-weight: bold; /* Fonte em negrito */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Alinha o conteúdo do botão no centro */
+  cursor: pointer; /* Cursor de ponteiro para indicar que é clicável */
+  transition: all 0.3s ease; /* Transição suave para mudanças de estilo */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra do botão */
+}
+
+#searchButton:focus,
+#searchButton:hover {
+  transform: translateY(-5px); /* Eleva o botão ao passar o mouse ou ao focar */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada ao passar o mouse ou ao focar */
+  background: linear-gradient(45deg, var(--lightPrimary), var(--lightestColor)); /* Gradiente de fundo alterado ao passar o mouse ou ao focar */
+  animation: pulse 1.5s infinite; /* Animação de pulso para um efeito dinâmico */
+}
+
+#searchButton i {
+  margin: 0; /* Remove a margem do ícone dentro do botão */
+  padding: 0; /* Remove o padding do ícone dentro do botão */
+}
+
+main {
+  text-align: center; /* Alinha o texto ao centro */
+  padding: 2rem 0; /* Espaçamento interno no main */
+  background-color: var(--primaryColor); /* Cor de fundo do main */
+  color: #0d1b2a; /* Cor do texto no main */
+  flex-grow: 1; /* Permite que o main cresça para ocupar o espaço disponível */
+}
+
+#movieList {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte */
+  justify-content: center; /* Alinha os itens ao centro */
+  gap: 2rem; /* Espaçamento entre os itens */
+  margin-top: 1rem; /* Espaçamento acima da lista de filmes */
+}
+
+#movieList article {
+  display: flex;
+  flex-direction: column; /* Organiza os itens na coluna */
+  justify-content: space-between; /* Espaça os itens verticalmente */
+}
+
+#movieList article img {
+  border-radius: 10px; /* Bordas arredondadas das imagens */
+  margin-bottom: 0.5rem; /* Espaçamento abaixo da imagem */
+  width: 200px; /* Largura fixa das imagens */
+  height: auto; /* Mantém a proporção da imagem */
+  cursor: pointer; /* Cursor de ponteiro para indicar que a imagem é clicável */
+  transition: all 0.3s ease; /* Transição suave para mudanças de estilo */
+}
+
+#movieList article img:hover {
+  transform: translateY(-5px); /* Eleva a imagem ao passar o mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada ao passar o mouse */
+  background: linear-gradient(45deg, var(--lightPrimary), var(--lightestColor)); /* Gradiente de fundo alterado ao passar o mouse */
+  animation: pulse 1.5s infinite; /* Animação de pulso para um efeito dinâmico */
+}
+
+#movieList article button {
+  background: linear-gradient(45deg, var(--lightestColor), var(--lightPrimary)); /* Gradiente de fundo do botão */
+  color: var(--secondaryColor); /* Cor do texto do botão */
+  border-radius: 20px; /* Bordas arredondadas do botão */
+  border: none; /* Remove a borda padrão */
+  padding: 5px 10px; /* Espaçamento interno do botão */
+  font-size: 10px; /* Tamanho da fonte do botão */
+  margin: 5px; /* Espaçamento externo do botão */
+  cursor: pointer; /* Cursor de ponteiro para indicar que é clicável */
+  transition: all 0.3s ease; /* Transição suave para mudanças de estilo */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra do botão */
+}
+
+#movieList article button:focus,
+#movieList article button:hover {
+  transform: translateY(-5px); /* Eleva o botão ao passar o mouse ou ao focar */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada ao passar o mouse ou ao focar */
+  background: linear-gradient(45deg, var(--lightPrimary), var(--lightestColor)); /* Gradiente de fundo alterado ao passar o mouse ou ao focar */
+  animation: pulse 1.5s infinite; /* Animação de pulso para um efeito dinâmico */
+}
