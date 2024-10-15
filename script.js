@@ -11,7 +11,7 @@ let movieListAdd = JSON.parse(localStorage.getItem("movieList")) ?? [];
 searchButton.addEventListener("click", async function () {
   try {
     // Gera a URL para a requisição API com base no nome e ano do filme
-    let url = `http://www.omdbapi.com/?apikey=${key}&t=${movieNameGenerator()}${movieYearGenerator()}`;
+    let url = `https://www.omdbapi.com/?apikey=${key}&t=${movieNameGenerator()}${movieYearGenerator()}`;
     const response = await fetch(url);
     const data = await response.json();
 
