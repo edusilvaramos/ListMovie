@@ -28,6 +28,12 @@ header {
   color: var(--lightSecondary); /* Cor do texto do cabeçalho */
 }
 
+#titreAnglais {
+  font-size: 9px;
+  color: var(--lightSecondary);
+}
+
+
 header > h2 > i {
   margin-right: 0.5rem; /* Espaçamento à direita do ícone dentro do título */
 }
