@@ -99,3 +99,14 @@
   background: linear-gradient(45deg, var(--lightPrimary), var(--lightestColor)); /* Gradiente invertido para o hover */
   animation: pulse 1.5s infinite; /* Animação de pulso para um efeito dinâmico */
 }
+
+/*------- Responsividade -------*/
+
+@media screen and (max-width: 500px) {
+
+  #movieInfo{
+    font-size: 0.9rem;
+    margin: 1rem;
+  }
+
+}
