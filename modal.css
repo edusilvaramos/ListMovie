@@ -103,10 +103,9 @@
 /*------- Responsividade -------*/
 
 @media screen and (max-width: 500px) {
-
-  #movieInfo{
+  #movieInfo {
     font-size: 0.9rem;
     margin: 1rem;
+    width: 90%;
   }
-
 }
